@@ -1,0 +1,31 @@
+* {
+  font-family: Arial, sans-serif;
+  font-size: medium;
+  line-height: 1.6;
+}
+
+.container {
+  display: grid; 
+  grid-template-columns: 1fr 3fr; 
+  grid-template-rows: auto 1fr auto; 
+  gap: 2px; 
+}
+
+.header {
+  grid-column: 1 / span 2; 
+  padding: 10px;
+  border-bottom: #020c37 solid 1px;
+}
+
+.menu {
+  grid-column: 1;
+  grid-row: 2;
+  padding: 10px;
+  border-right: #020c37 solid 1px;
+}
+
+.main {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 10px;
+}

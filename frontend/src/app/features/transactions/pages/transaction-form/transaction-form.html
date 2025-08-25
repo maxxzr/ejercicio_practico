@@ -1,0 +1,29 @@
+<form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+    <div class="control-row">
+        <div class="control-column-6">
+            <label for="amount">Numero de cuenta:</label>
+            <input id="amount" type="number" formControlName="amount" autocomplete="off" />
+            @if (transactionForm.get('amount')?.touched && transactionForm.get('amount')?.invalid) {
+            <div class="input-error">
+                @if (transactionForm.get('amount')?.errors?.['required']) {
+                <span>El monto es obligatorio.</span>
+                }@if (transactionForm.get('amount')?.errors?.['min']) {
+                <span>El monto debe ser mayor que 0.</span>
+                }
+            </div>
+            }
+        </div>
+        <div class="control-column-2">
+            <label for="transactionTypeId">Tipo:</label>
+            <select id="transactionTypeId" formControlName="transactionTypeId">
+                <option *ngFor="let transactionType of transactionTypes" [value]="transactionType.id">{{ transactionType.name }}</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <button class="button right" type="submit">Guardar</button>
+        <button class="button left " type="button" (click)="cancel()">Cancelar</button>
+    </div>
+
+</form>

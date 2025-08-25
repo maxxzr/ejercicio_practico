@@ -1,0 +1,92 @@
+<p>{{title}}</p>
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+    <div class="control-row">
+        <div class="control-column-1">
+            <label for="documentNumber">Documento:</label>
+            <input id="documentNumber" type="text" formControlName="documentNumber" autocomplete="off" />
+            @if (clientForm.get('documentNumber')?.touched && clientForm.get('documentNumber')?.invalid) {
+            <div class="input-error">
+                @if (clientForm.get('documentNumber')?.errors?.['required']) {
+                <span>El documento es obligatorio.</span>
+                }@if (clientForm.get('documentNumber')?.errors?.['minlength']) {
+                <span>El documento debe tener al menos 8 caracteres.</span>
+                }
+            </div>
+            }
+        </div>
+        <div class="control-column-4">
+            <label for="name">Nombre:</label>
+            <input id="name" type="text" formControlName="name" autocomplete="off" />
+            @if (clientForm.get('name')?.touched && clientForm.get('name')?.invalid) {
+            <div class="input-error">
+                @if (clientForm.get('name')?.errors?.['required']) {
+                <span>El nombre es obligatorio.</span>
+                }@if (clientForm.get('name')?.errors?.['minlength']) {
+                <span>El nombre debe tener al menos 3 caracteres.</span>
+                }
+            </div>
+            }
+        </div>
+        <div class="control-column-1">
+            <label for="genderId">Genero:</label>
+            <select id="genderId" formControlName="genderId">
+                <option *ngFor="let gender of genders" [value]="gender.id">{{ gender.name }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="control">
+        <label for="address">Dirección:</label>
+        <input id="address" type="text" formControlName="address" autocomplete="off" />
+        @if (clientForm.get('address')?.touched && clientForm.get('address')?.invalid) {
+        <div class="input-error">
+            @if (clientForm.get('address')?.errors?.['required']) {
+            <span>La dirección es obligatoria.</span>
+            }@if (clientForm.get('address')?.errors?.['minlength']) {
+            <span>La dirección debe tener al menos 3 caracteres.</span>
+            }
+        </div>
+        }
+    </div>
+    <div class="control-row">
+        <div class="control-column">
+            <label for="phone">Teléfono:</label>
+            <input id="phone" type="text" formControlName="phone" autocomplete="off" />
+            @if (clientForm.get('phone')?.touched && clientForm.get('phone')?.invalid) {
+            <div class="input-error">
+                @if (clientForm.get('phone')?.errors?.['required']) {
+                <span>El telefono es obligatorio.</span>
+                }@if (clientForm.get('phone')?.errors?.['minlength']) {
+                <span>El telefono debe tener al menos 8 caracteres.</span>
+                }
+            </div>
+            }
+        </div>
+        <div class="control-column">
+            <label for="birthDate">Fecha nacimiento:</label>
+            <input id="birthDate" type="date" formControlName="birthDate" />
+        </div>
+        <div class="control-column">
+            <label for="password">Contraseña:</label>
+            <input id="password" type="password" formControlName="password" />
+        </div>
+        <div class="control-column">
+            <label for="repeatPassword">Repita Contraseña:</label>
+            <input id="repeatPassword" type="password" formControlName="repeatPassword" />
+        </div>
+    </div>
+    @if (!isNewMode) {
+    <div class="control-row">
+        <div class="control">
+            <label for="statusClientId">Estado cliente:</label>
+            <select id="statusClientId" formControlName="statusClientId">
+                <option *ngFor="let item of statusClient" [value]="item.id">{{ item.name }}</option>
+            </select>
+        </div>
+    </div>
+    }
+<div class="space-2"></div>
+    @if (!isDetailMode) {<button class="button right" type="submit">Guardar</button>}
+
+    <button class="button right" type="button" (click)="backPage()">Regresar</button>
+    @if (isDetailMode) {<button class="button left danger" type="button" (click)="deleteClient()">Eliminar</button>}
+</form>

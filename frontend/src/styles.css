@@ -1,0 +1,128 @@
+table{
+    width: 100%;
+     table-layout:auto;
+    border-collapse: collapse;
+}
+th, td{
+    border: 1px solid #5c4545dd;
+    padding: 4px 6px;
+}
+
+input,select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; 
+}
+
+input:focus ,select:focus{
+  border-color: #007bff;
+  outline: none; 
+}
+input.ng-invalid.ng-touched{
+  border-color: #ff0000;
+}
+label{
+    margin-top: 10px;
+    display: block;
+    margin-left: 0px;
+    font-size: 0.85em;
+}
+.control input,
+.control select,
+    .control-column input,
+    .control-column-1 input,.control-column-1 select,
+    .control-column-2 input,.control-column-2 select,
+    .control-column-3 input,.control-column-3 select,
+    .control-column-4 input,.control-column-4 select,
+    .control-column-5 input,.control-column-5 select,
+    .control-column-6 input,.control-column-6 select{
+    width: 100%;
+}
+.control-row{
+    display: flex; 
+    gap: 8px;
+}
+.control-column{
+    flex:1; 
+}
+
+.control-column-1{
+    flex:1; 
+}
+
+.control-column-2{
+    flex:2; 
+}
+
+.control-column-3{
+    flex:3; 
+}
+
+.control-column-4{
+    flex:4; 
+}
+
+.control-column-5{
+    flex:5; 
+}
+.control-column-6{
+    flex:6; 
+}
+
+.button{
+    display: block;
+    padding: 10px;
+    width: 150px;
+    border: #007bff 1px solid;
+    background-color: #ffff00;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 4px;
+}
+.button:hover{
+    background-color: #5eff00;
+}
+
+.right{
+    float: right;
+}
+.input-error span{
+    color: red;
+    font-size: 0.7em;
+}
+
+.danger{
+    background-color:rgba(255, 0, 0, 0.671);
+}
+.danger:hover{
+    background-color:  red;
+}
+.space-2{
+    height: 20px;
+}
+a{
+    text-decoration: none;
+    color: #020c37;
+}
+.action a{
+    border-radius: 4px;
+    margin: 4px;
+    padding: 4px;
+    border: 1px solid #020c37;
+    cursor: pointer;
+}
+.action a:hover{
+    background-color: #bdc9d6;
+}
+
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}

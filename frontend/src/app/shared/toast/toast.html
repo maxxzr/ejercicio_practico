@@ -1,0 +1,8 @@
+<div class="toast-container">
+  @for (toast of toastService.toasts; track $index) {
+    <div class="toast-item toast-item-{{toast.type}}">
+        <span class="toast-closed" (click)="toastService.remove($index)">x</span>
+        <div class="toast-content" [innerHTML]="toast.message"></div>
+    </div>
+  }
+</div>

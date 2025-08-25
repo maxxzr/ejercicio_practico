@@ -1,0 +1,38 @@
+<p>Clientes</p>
+<div class="toolbar">
+    <input [formControl]="searchControl" type="text" placeholder="Buscar por nombre..." style="flex:1; padding: 8px;" />
+    <a class="button" style="margin-left: 100px;width: 200px;padding: 8px;" (click)="onNewClient()">Nuevo</a>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Teléfono</th>
+            <th>Edad</th>
+            <th>Contraseña</th>
+            <th>Estado</th>
+            <th style="width: 100px;">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of clients()">
+            <td>{{ item.name }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.phone }}</td>
+            <td>{{ item.age }}</td>
+            <td>{{ item.password }}</td>
+            <td>{{ item.status }}</td>
+            <td>
+                <div class="action">
+                    <a routerLink="/clients/{{ item.clientId }}/detail" class="xbutton">Detalle</a>
+                    <a routerLink="/clients/{{ item.clientId }}/edit/" class="xbutton">Editar</a>
+                    <a routerLink="/clients/{{ item.clientId }}/accounts" class="xbutton">Cuentas</a>
+                </div>
+            </td>
+        </tr>
+        <tr *ngIf="clients().length === 0">
+            <td colspan="7">Sin datos.</td>
+        </tr>
+    </tbody>
+</table>

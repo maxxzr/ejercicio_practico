@@ -1,0 +1,1318 @@
+{
+	"info": {
+		"_postman_id": "a663dd03-ba53-4750-b2ce-0675bd29fa09",
+		"name": "Bank.WebAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3610370",
+		"_collection_link": "https://orange-meteor-96749.postman.co/workspace/Randstad~c8f563b2-8d52-440e-b2eb-2f2c5ace9df8/collection/3610370-a663dd03-ba53-4750-b2ce-0675bd29fa09?action=share&source=collection_link&creator=3610370"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "{accountId}",
+					"item": [
+						{
+							"name": "transactions",
+							"item": [
+								{
+									"name": "/Account/:accountId/transactions",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Account/:accountId/transactions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Account",
+												":accountId",
+												"transactions"
+											],
+											"variable": [
+												{
+													"key": "accountId",
+													"value": "4",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/Account/:accountId/transactions",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"Account",
+														":accountId",
+														"transactions"
+													],
+													"variable": [
+														{
+															"key": "accountId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "transaction",
+							"item": [
+								{
+									"name": "/Account/:accountId/transaction",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"accountId\": 15,\n  \"transactionTypeId\": 2,\n  \"amount\": 10\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Account/:accountId/transaction",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Account",
+												":accountId",
+												"transaction"
+											],
+											"variable": [
+												{
+													"key": "accountId",
+													"value": "15",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accountId\": 6613,\n  \"transactionTypeId\": 2,\n  \"amount\": 3840.3636538478004\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/Account/:accountId/transaction",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"Account",
+														":accountId",
+														"transaction"
+													],
+													"variable": [
+														{
+															"key": "accountId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/Account/:accountId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Account/:accountId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Account",
+										":accountId"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "15",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Account/:accountId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Account",
+												":accountId"
+											],
+											"variable": [
+												{
+													"key": "accountId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/Account/:accountId",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"clientId\": 1,\n  \"number\": \"9898989\",\n  \"accountTypeId\": 1,\n  \"initialBalance\": 90,\n  \"accountId\": 15,\n  \"statusAccountId\": 2\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Account/:accountId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Account",
+										":accountId"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "15",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"clientId\": 9738,\n  \"number\": \"string\",\n  \"accountTypeId\": 8236,\n  \"initialBalance\": 9101.037496175992,\n  \"accountId\": 9263,\n  \"statusAccountId\": 2\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Account/:accountId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Account",
+												":accountId"
+											],
+											"variable": [
+												{
+													"key": "accountId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/Account/:accountId",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Account/:accountId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Account",
+										":accountId"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "99",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Account/:accountId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Account",
+												":accountId"
+											],
+											"variable": [
+												{
+													"key": "accountId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Account",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Account"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Account",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Account"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientId\": 1,\n  \"number\": \"99887766\",\n  \"accountTypeId\": 1,\n  \"initialBalance\": 90\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Account",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Account"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"clientId\": 2981,\n  \"number\": \"string\",\n  \"accountTypeId\": 3238,\n  \"initialBalance\": 4630.907761131813\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Account",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Account"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "{clientId}",
+					"item": [
+						{
+							"name": "accounts",
+							"item": [
+								{
+									"name": "/Client/:clientId/accounts",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Client/:clientId/accounts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Client",
+												":clientId",
+												"accounts"
+											],
+											"variable": [
+												{
+													"key": "clientId",
+													"value": "1",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/Client/:clientId/accounts",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"Client",
+														":clientId",
+														"accounts"
+													],
+													"variable": [
+														{
+															"key": "clientId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/Client/:clientId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Client/:clientId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Client",
+										":clientId"
+									],
+									"variable": [
+										{
+											"key": "clientId",
+											"value": "4509",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Client/:clientId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Client",
+												":clientId"
+											],
+											"variable": [
+												{
+													"key": "clientId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/Client/:clientId",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"documentNumber\": \"string\",\n  \"name\": \"string\",\n  \"address\": \"string\",\n  \"genderId\": 2,\n  \"birthDate\": \"1983-03-07T23:03:52.917Z\",\n  \"phone\": \"string\",\n  \"password\": \"string\",\n  \"repeatPassword\": \"string\",\n  \"clientId\": 1174,\n  \"personId\": 104,\n  \"statusClientId\": 3\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Client/:clientId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Client",
+										":clientId"
+									],
+									"variable": [
+										{
+											"key": "clientId",
+											"value": "4509",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"documentNumber\": \"string\",\n  \"name\": \"string\",\n  \"address\": \"string\",\n  \"genderId\": 2,\n  \"birthDate\": \"1983-03-07T23:03:52.917Z\",\n  \"phone\": \"string\",\n  \"password\": \"string\",\n  \"repeatPassword\": \"string\",\n  \"clientId\": 1174,\n  \"personId\": 104,\n  \"statusClientId\": 3\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Client/:clientId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Client",
+												":clientId"
+											],
+											"variable": [
+												{
+													"key": "clientId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/Client/:clientId",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Client/:clientId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Client",
+										":clientId"
+									],
+									"variable": [
+										{
+											"key": "clientId",
+											"value": "4509",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Client/:clientId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Client",
+												":clientId"
+											],
+											"variable": [
+												{
+													"key": "clientId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/Client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Client?name=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Client"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Client?name=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Client"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"documentNumber\": \"99661144\",\n  \"name\": \"Nuevo Cliente\",\n  \"address\": \"Calle falsa 987\",\n  \"genderId\": 1,\n  \"birthDate\": \"1995-02-25T07:30:45.416Z\",\n  \"phone\": \"6066066\",\n  \"password\": \"Clave_987\",\n  \"repeatPassword\": \"Clave_987\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Client",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Client"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"documentNumber\": \"string\",\n  \"name\": \"string\",\n  \"address\": \"string\",\n  \"genderId\": 1,\n  \"birthDate\": \"1995-02-25T07:30:45.416Z\",\n  \"phone\": \"string\",\n  \"password\": \"string\",\n  \"repeatPassword\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Client",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Client"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Person",
+			"item": [
+				{
+					"name": "{personId}",
+					"item": [
+						{
+							"name": "/Person/:personId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Person/:personId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Person",
+										":personId"
+									],
+									"variable": [
+										{
+											"key": "personId",
+											"value": "1",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Person/:personId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Person",
+												":personId"
+											],
+											"variable": [
+												{
+													"key": "personId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/Person/:personId",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"documentNumber\": \"45945554\",\n  \"name\": \"Jose Lema\",\n  \"address\": \"Otavalo sn y principal\",\n  \"genderId\": 1,\n  \"birthDate\": \"1997-07-01T16:55:09.102Z\",\n  \"phone\": \"098254785\",\n  \"personId\": 1\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Person/:personId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Person",
+										":personId"
+									],
+									"variable": [
+										{
+											"key": "personId",
+											"value": "1",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"documentNumber\": \"string\",\n  \"name\": \"string\",\n  \"address\": \"strin\",\n  \"genderId\": 1,\n  \"birthDate\": \"1997-07-01T16:55:09.102Z\",\n  \"phone\": \"string\",\n  \"personId\": 2984\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Person/:personId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Person",
+												":personId"
+											],
+											"variable": [
+												{
+													"key": "personId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/Person/:personId",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Person/:personId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Person",
+										":personId"
+									],
+									"variable": [
+										{
+											"key": "personId",
+											"value": "99",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Person/:personId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Person",
+												":personId"
+											],
+											"variable": [
+												{
+													"key": "personId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/Person",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Person",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Person"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Person",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Person"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/Person",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"documentNumber\": \"45945621\",\n  \"name\": \"Max\",\n  \"address\": \"Calle Falsa 123\",\n  \"genderId\": 1,\n  \"birthDate\": \"1989-01-02T01:44:23.888Z\",\n  \"phone\": \"9966554411\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Person",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Person"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"documentNumber\": \"string\",\n  \"name\": \"string\",\n  \"address\": \"string\",\n  \"genderId\": 2,\n  \"birthDate\": \"1972-10-23T01:44:23.888Z\",\n  \"phone\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Person",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Person"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "/Report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Report?DocumentNumber=45945554&StartDate=2010-12-01T11:52:42.134Z&EndDate=2028-12-01T11:52:42.134Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Report"
+							],
+							"query": [
+								{
+									"key": "DocumentNumber",
+									"value": "45945554"
+								},
+								{
+									"key": "StartDate",
+									"value": "2010-12-01T11:52:42.134Z"
+								},
+								{
+									"key": "EndDate",
+									"value": "2028-12-01T11:52:42.134Z"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Report?DocumentNumber=string&StartDate=2010-12-01T11:52:42.134Z&EndDate=2010-12-01T11:52:42.134Z",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Report"
+									],
+									"query": [
+										{
+											"key": "DocumentNumber",
+											"value": "string"
+										},
+										{
+											"key": "StartDate",
+											"value": "2010-12-01T11:52:42.134Z"
+										},
+										{
+											"key": "EndDate",
+											"value": "2010-12-01T11:52:42.134Z"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "/Transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Transaction",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Transaction"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Transaction",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Transaction"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:44395"
+		}
+	]
+}

@@ -1,0 +1,48 @@
+<form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+    <div class="control-row">
+        <div class="control-column-4">
+            <label for="number">Numero de cuenta:</label>
+            <input id="number" type="text" formControlName="number" autocomplete="off" />
+            @if (accountForm.get('number')?.touched && accountForm.get('number')?.invalid) {
+            <div class="input-error">
+                @if (accountForm.get('number')?.errors?.['required']) {
+                <span>El numero de cuenta es obligatorio.</span>
+                }@if (accountForm.get('number')?.errors?.['minlength']) {
+                <span>El numero de cuenta debe tener al menos 6 caracteres.</span>
+                }
+            </div>
+            }
+        </div>
+        <div class="control-column-2">
+            <label for="accountTypeId">Tipo Cuenta:</label>
+            <select id="accountTypeId" formControlName="accountTypeId">
+                <option *ngFor="let accountType of accountTypes" [value]="accountType.id">{{ accountType.name }}</option>
+            </select>
+        </div>
+        <div class="control-column-2">
+            <label for="initialBalance">Saldo Inicial:</label>
+            <input id="initialBalance" type="number" formControlName="initialBalance" autocomplete="off" />
+            @if (accountForm.get('initialBalance')?.touched && accountForm.get('initialBalance')?.invalid) {
+            <div class="input-error">
+                @if (accountForm.get('initialBalance')?.errors?.['required']) {
+                <span>El saldo inicial es obligatorio.</span>
+                }@if (accountForm.get('initialBalance')?.errors?.['min']) {
+                <span>El saldo inicial debe ser mayor o igual a 0.</span>
+                }
+            </div>
+            }
+        </div>
+        <div class="control-column-2">
+            <label for="statusAccountId">Estado:</label>
+            <select id="statusAccountId" formControlName="statusAccountId">
+                <option *ngFor="let status of statusAccount" [value]="status.id">{{ status.name }}</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <button class="button right" type="submit">Guardar</button>
+        <button class="button left " type="button" (click)="cancel()">Cancelar</button>
+    </div>
+
+</form>

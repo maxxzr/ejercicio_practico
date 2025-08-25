@@ -1,0 +1,34 @@
+<p>Cuentas |  {{client?.documentNumber}} - {{client?.name}}</p>
+<a class="button" (click)="showNewMoldaAccountForm()">Nueva cuenta</a>
+<br/>
+
+<app-modal #modalAccount >
+  <app-account-form #accountForm [clientId]="client?.clientId" (onCancel)="modalAccount.close()" (onSave)="onSaveAccount()"/>
+</app-modal>
+
+<table>
+    <thead>
+        <th>Nro cuenta</th>
+        <th>Tipo de cuenta</th>
+        <th>Saldo Inicial</th>
+        <th>Saldo Actual</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of accounts">
+            <td>{{ item.number }}</td>
+            <td>{{ item.accountTypeDescription }}</td>
+            <td>{{ item.initialBalance }}</td>
+            <td>{{ item.currentBalance }}</td>
+            <td>{{ item.statusAccountDescription }}</td>
+            <td>
+                <div class="action">
+                    <a (click)="showEditMoldaAccountForm(item)">Editar</a>
+                    <a (click)="showConfirmDeleteAccount(item)">Eliminar</a>
+                    <a routerLink="/accounts/{{ item.accountId }}/transactions/" class="xbutton">Movimientos</a>
+                </div>
+            </td>    
+    </tbody>
+</table>
+<button  (click)="backPage()" class="button right">Volver</button>

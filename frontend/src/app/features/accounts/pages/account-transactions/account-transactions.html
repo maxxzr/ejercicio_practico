@@ -1,0 +1,24 @@
+<p>Movimientos | Cuenta : {{account?.number}} - {{account?.clientName}}</p>
+<a class="button" (click)="showNewMoldalTransactionForm()">Nueva transaccion</a>
+<br/>
+
+<app-modal #modalTransaction >
+  <app-transaction-form #transactionForm [accountId]="account?.accountId" (onCancel)="modalTransaction.close()" (onSave)="onSaveTransaction()"/>
+</app-modal>
+
+<table>
+    <thead>
+        <th>Fecha</th>
+        <th>Saldo Inicial</th>
+        <th>Monto</th>
+        <th>Saldo Final</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of transactions">
+            <td class="text-center">{{ item.dateTransaction | date:'dd/MM/yyyy'}}</td>
+            <td class="text-right">{{ item.initialBalance | number:'0.2'}}</td>
+            <td class="text-right">{{ item.amount | number:'0.2'}}</td>
+            <td class="text-right">{{ item.balance | number:'0.2'}}</td> 
+    </tbody>
+</table>
+<button  (click)="backPage()" class="button right">Volver</button>
